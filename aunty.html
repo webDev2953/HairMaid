@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HairMaid Ndu | Professional Hair Stylist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --rose-gold: #e0bfb8;
+            --blush-pink: #f3e1dd;
+            --cream-white: #f9f5f0;
+            --warm-mocha: #d4b8a6;
+            --midnight-plum: #3a2e3d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--midnight-plum);
+            line-height: 1.6;
+            background-color: var(--cream-white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--midnight-plum);
+            position: relative;
+        }
+
+            .section-title:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 3px;
+                background: var(--rose-gold);
+                margin: 15px auto;
+            }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--rose-gold);
+            color: var(--midnight-plum);
+            border: 2px solid var(--rose-gold);
+        }
+
+            .btn-primary:hover {
+                background-color: transparent;
+                color: var(--rose-gold);
+            }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--cream-white);
+            border: 2px solid var(--cream-white);
+        }
+
+            .btn-secondary:hover {
+                background-color: var(--cream-white);
+                color: var(--midnight-plum);
+            }
+
+        /* Header */
+        header {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            background-color: rgba(58, 46, 61, 0.9);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cream-white);
+            text-decoration: none;
+        }
+
+            .logo span {
+                color: var(--rose-gold);
+            }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .nav-links li {
+                margin-left: 30px;
+            }
+
+            .nav-links a {
+                color: var(--cream-white);
+                text-decoration: none;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+                .nav-links a:after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background: var(--rose-gold);
+                    bottom: -5px;
+                    left: 0;
+                    transition: width 0.3s ease;
+                }
+
+                .nav-links a:hover:after {
+                    width: 100%;
+                }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(58, 46, 61, 0.5), rgba(58, 46, 61, 0.5)), url('https://i.postimg.cc/YCMnQLDk/BOB-WIG.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--cream-white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--cream-white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+
+            .about-text h2 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+                color: var(--midnight-plum);
+            }
+
+            .about-text p {
+                margin-bottom: 20px;
+            }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            background: url('https://i.postimg.cc/HL7rhwQq/Whats-App-Image-2025-04-12-at-21-21-42.jpg') no-repeat center center/cover;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--blush-pink);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--cream-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+            .service-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: var(--midnight-plum);
+            }
+
+            .service-content p {
+                margin-bottom: 20px;
+            }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--rose-gold);
+            font-size: 1.2rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--cream-white);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(58, 46, 61, 0.8), transparent);
+            color: var(--cream-white);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--warm-mocha);
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--cream-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+            .testimonial-card:before {
+                content: '\201C';
+                font-family: 'Playfair Display', serif;
+                font-size: 5rem;
+                color: var(--rose-gold);
+                opacity: 0.3;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--rose-gold);
+        }
+
+        /* Booking Section */
+        .booking {
+            background-color: var(--cream-white);
+        }
+
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--blush-pink);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-image {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            background: url('https://i.postimg.cc/7LfVD8LG/Book-Your-Appointment.jpg') no-repeat center center/cover;
+        }
+
+        .booking-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px;
+        }
+
+            .booking-form h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--midnight-plum);
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 700;
+                color: var(--midnight-plum);
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--rose-gold);
+            }
+
+        .submit-btn {
+            background-color: var(--rose-gold);
+            color: var(--midnight-plum);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+            .submit-btn:hover {
+                background-color: var(--midnight-plum);
+                color: var(--cream-white);
+            }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--midnight-plum);
+            color: var(--cream-white);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+            .contact-info h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--cream-white);
+            }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--rose-gold);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--cream-white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+            .social-link:hover {
+                background-color: var(--rose-gold);
+                color: var(--midnight-plum);
+            }
+
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+            .contact-map iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+        /* Footer */
+        footer {
+            background-color: var(--midnight-plum);
+            color: var(--cream-white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cream-white);
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+            .footer-logo span {
+                color: var(--rose-gold);
+            }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .footer-links li {
+                margin: 0 15px;
+            }
+
+            .footer-links a {
+                color: var(--cream-white);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .footer-links a:hover {
+                    color: var(--rose-gold);
+                }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Booking Confirmation */
+        .booking-confirmation {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: var(--cream-white);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .confirmation-icon {
+            font-size: 4rem;
+            color: var(--rose-gold);
+            margin-bottom: 20px;
+        }
+
+        /* Form Validation Styles */
+        .form-control.invalid {
+            border-color: #ff6b6b;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .booking-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--midnight-plum);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease;
+                z-index: 1001;
+            }
+
+                .nav-links.active {
+                    right: 0;
+                }
+
+                .nav-links li {
+                    margin: 15px 0;
+                }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+
+            .about-image, .booking-image {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">HairMaid<span>Ndu</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Professional Wig Care & Styling</h1>
+            <p>Specializing in wig installation, washing, and revamping services to keep your hair looking flawless.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Your Hair, My Passion</h2>
+                    <p>I'm Nondumiso Mbhense, a professional hair stylist specializing in wig care and installation services. With years of experience, I'm dedicated to helping my clients look and feel their best with quality hair services.</p>
+                    <p>Located in Emdeni South, Soweto, I provide personalized wig services using quality products and techniques to ensure your hair always looks its best.</p>
+                    <p>Whether you need a fresh install, wig maintenance, or a stylish revamp, I'm here to deliver excellent results with attention to detail.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://i.postimg.cc/bY6K982W/installation.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Hair Installation</h3>
+                        <p>Professional hair installation service for a flawless, natural look that lasts.</p>
+                        <p class="service-price">R150</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://i.postimg.cc/4xhk3MyM/wig-wash.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Wig Wash</h3>
+                        <p>Expert wig cleaning and conditioning to maintain quality and longevity.</p>
+                        <p class="service-price">1 Wig: R150<br>2+ Wigs: R100 each</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://i.postimg.cc/9ftkRjhx/Wig-Revamp-to-Fringe.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Wig Revamp to Fringe</h3>
+                        <p>Transform your wig with a stylish fringe, including wash and precision cutting.</p>
+                        <p class="service-price">R150</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">My Work</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/sXz8nNTB/My-work1.jpg" alt="Professional hair styling example" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Stylish Transformation</h3>
+                        <p>Beautiful hair makeover</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/KzQ90vKV/my-work2.webp" alt="Hair installation work" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Hair Installation</h3>
+                        <p>Natural-looking results</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/ZY773nzv/work2-1.webp" alt="Wig styling example" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Wig Styling</h3>
+                        <p>Perfect fit and finish</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/LX4DgKyV/Wig-wash-before.jpg" alt="Wig before washing" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Before Wash</h3>
+                        <p>Ready for restoration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/2yVxTdNb/After.jpg" alt="Wig after washing" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>After Wash</h3>
+                        <p>Fresh and renewed</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/yY3PZTT2/In-use-after-wash.jpg" alt="Wig in use after washing" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>In Use</h3>
+                        <p>Beautiful final result</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/mrBNKWGG/Revamp-to-fringe.jpg" alt="Wig revamped to fringe" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Fringe Revamp</h3>
+                        <p>Stylish transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Stories</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I've been going to HairMaid Ndu for my wig installations and the service is always exceptional. My wig looks so natural and lasts for weeks. Highly recommend her services!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.postimg.cc/nL6HjN95/Busi.jpg" alt="Busi" class="author-image">
+                        <div class="author-info">
+                            <h4>Busi</h4>
+                            <p>Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The wig wash service brought my favorite wig back to life! It looks and feels like new again. Very professional and affordable service.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.postimg.cc/85MThwhC/Zoleka.jpg" alt="Zoleka" class="author-image">
+                        <div class="author-info">
+                            <h4>Zoleka</h4>
+                            <p>Satisfied Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I love my new fringe! HairMaid Ndu transformed my old wig into something fresh and stylish. The cut is perfect and the service was quick and professional.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.postimg.cc/hjjGTV2z/nthabiseng.jpg" alt="Faith" class="author-image">
+                        <div class="author-info">
+                            <h4>Faith</h4>
+                            <p>Happy Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <div class="booking-container">
+                <div class="booking-image"></div>
+                <div class="booking-form">
+                    <h2>Schedule Your Visit</h2>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <div class="error-message" id="name-error">Please enter your name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                            <div class="error-message" id="phone-error">Please enter your phone number</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="Hair Installation (R150)">Hair Installation (R150)</option>
+                                <option value="1 Wig Wash (R150)">1 Wig Wash (R150)</option>
+                                <option value="2+ Wigs Wash (R100 each)">2+ Wigs Wash (R100 each)</option>
+                                <option value="Wig Revamp to Fringe (R150)">Wig Revamp to Fringe (R150)</option>
+                            </select>
+                            <div class="error-message" id="service-error">Please select a service</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" class="form-control" required>
+                            <div class="error-message" id="date-error">Please select a future date</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <input type="time" id="time" name="time" class="form-control" min="09:00" max="18:00" required>
+                            <div class="error-message" id="time-error">Please select time between 9am-6pm</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Special Requests</label>
+                            <textarea id="notes" name="notes" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="btnText">Book Appointment</span>
+                            <span id="btnSpinner" style="display:none;">
+                                <i class="fas fa-spinner fa-spin"></i> Processing...
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="booking-confirmation" id="bookingConfirmation">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Booking Request Sent!</h3>
+                        <p>We've sent your booking details via WhatsApp.</p>
+                        <p>Please check your messages to complete the booking process.</p>
+                        <button onclick="window.location.reload()" class="submit-btn" style="margin-top:20px;">
+                            <i class="fas fa-calendar-plus"></i> Make Another Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>06673 Ntsu Street<br>Emdeni South, Soweto</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>069 150 3697 (Calls)<br>082 8173 465 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>nondumisombhense@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 9am - 6pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://wa.me/27828173465" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.2345678901234!2d27.8114529!3d-26.2431202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1a0915b0a9%3A0x1e3c4a1f0a1b0b0b!2s06673%20Ntsu%20St%2C%20Emdeni%20South%2C%20Soweto%2C%201808!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">HairMaid<span>Ndu</span></a>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="copyright">&copy; 2023 HairMaid Ndu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form Validation Functions
+        function showError(input, errorId, message) {
+            input.classList.add('invalid');
+            const errorElement = document.getElementById(errorId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function hideError(input, errorId) {
+            input.classList.remove('invalid');
+            document.getElementById(errorId).style.display = 'none';
+        }
+
+        // Real-time Validation
+        document.getElementById('name').addEventListener('input', function () {
+            if (this.value.trim()) {
+                hideError(this, 'name-error');
+            }
+        });
+
+        document.getElementById('phone').addEventListener('input', function () {
+            if (this.value.trim()) {
+                hideError(this, 'phone-error');
+            }
+        });
+
+        document.getElementById('service').addEventListener('change', function () {
+            if (this.value) {
+                hideError(this, 'service-error');
+            }
+        });
+
+        document.getElementById('date').addEventListener('change', function () {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const selectedDate = new Date(this.value);
+            if (selectedDate >= today) {
+                hideError(this, 'date-error');
+            }
+        });
+
+        document.getElementById('time').addEventListener('change', function () {
+            const [hours, minutes] = this.value.split(':').map(Number);
+            if (hours >= 9 && hours < 18) {
+                hideError(this, 'time-error');
+            }
+        });
+
+        // WhatsApp Booking Submission
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value || 'Not provided',
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                notes: document.getElementById('notes').value || 'No special requests'
+            };
+
+            // Create WhatsApp message
+            const whatsappMessage = `*New Booking Request*%0A%0A` +
+                `*Name:* ${formData.name}%0A` +
+                `*Phone:* ${formData.phone}%0A` +
+                `*Email:* ${formData.email}%0A` +
+                `*Service:* ${formData.service}%0A` +
+                `*Date:* ${formData.date}%0A` +
+                `*Time:* ${formData.time}%0A` +
+                `*Special Requests:* ${formData.notes}`;
+
+            // Send via WhatsApp
+            const whatsappUrl = `https://wa.me/27828173465?text=${whatsappMessage}`;
+
+            // Open WhatsApp in new tab
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+
+                // Show confirmation
+                document.getElementById('bookingForm').style.display = 'none';
+                document.getElementById('bookingConfirmation').style.display = 'block';
+                window.location.hash = '#bookingConfirmation';
+
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnSpinner.style.display = 'none';
+                submitBtn.disabled = false;
+            }, 1000);
+        });
+
+        // Form Validation
+        function validateForm() {
+            let isValid = true;
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Validate name
+            const name = document.getElementById('name');
+            if (!name.value.trim()) {
+                showError(name, 'name-error', 'Please enter your name');
+                isValid = false;
+            }
+
+            // Validate phone
+            const phone = document.getElementById('phone');
+            if (!phone.value.trim()) {
+                showError(phone, 'phone-error', 'Please enter your phone number');
+                isValid = false;
+            }
+
+            // Validate service
+            const service = document.getElementById('service');
+            if (!service.value) {
+                showError(service, 'service-error', 'Please select a service');
+                isValid = false;
+            }
+
+            // Validate date
+            const date = document.getElementById('date');
+            const selectedDate = new Date(date.value);
+            if (!date.value || selectedDate < today) {
+                showError(date, 'date-error', 'Please select a future date');
+                isValid = false;
+            }
+
+            // Validate time
+            const time = document.getElementById('time');
+            const [hours, minutes] = time.value.split(':').map(Number);
+            if (!time.value || hours < 9 || hours >= 18) {
+                showError(time, 'time-error', 'Please select time between 9am-6pm');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Set minimum date to today for date picker
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>
